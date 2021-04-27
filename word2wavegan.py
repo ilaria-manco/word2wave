@@ -23,9 +23,8 @@ class Word2WaveGAN(nn.Module):
         self.load_coala()
         self.init_latents()
 
-    def load_wavegan(self, slice_len=16384, model_size=32):
-        # TODO remove hard coded path
-        path_to_model = "/homes/im311/repos/coalagan/wavegan/gan_fs_loop.tar"
+    def load_wavegan(self, modela_name="gan_fs_loop", slice_len=16384, model_size=32):
+        path_to_model = os.path.join(self.pretrained_models_path, modela_name+".tar")
         self.generator = WaveGANGenerator(slice_len=slice_len, model_size=model_size, use_batch_norm=False,num_channels=1)
         checkpoint = torch.load(path_to_model, map_location="cuda")
         self.generator.load_state_dict(checkpoint['generator'])

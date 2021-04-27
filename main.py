@@ -49,11 +49,11 @@ if __name__ == "__main__":
     parser.add_argument("--lr", type=float, default=0.04, help="learning rate")
     parser.add_argument("--steps", type=int, default=10000, help="number of optimization steps")
     parser.add_argument("--output_dir", type=str, default="output", help="path to store results")
-    parser.add_argument("--pretrained_models_path", type=str, default="pretrained_models", help="path to store wavegan and coala pretrained models")
+    parser.add_argument("--pretrained_models_path", type=str, default="/homes/im311/repos/coalagan/wavegan/", help="path to store wavegan and coala pretrained models")
 
     args = parser.parse_args()
 
-    os.environ["CUDA_VISIBLE_DEVICES"] = "2"
+    os.environ["CUDA_VISIBLE_DEVICES"] = "1"
 
     if not os.path.exists(args.output_dir):
         os.mkdir(args.output_dir)
