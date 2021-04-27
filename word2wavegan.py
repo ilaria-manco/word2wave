@@ -17,14 +17,14 @@ class Word2WaveGAN(nn.Module):
         super(Word2WaveGAN, self).__init__()
         # self.device = config.device
         self.device = "cuda"
-        self.pretrained_models_path = config.pretrained_models_path
+        self.pretrained_model_path = config.pretrained_model_path
 
         self.load_wavegan()
         self.load_coala()
         self.init_latents()
 
-    def load_wavegan(self, modela_name="gan_fs_loop", slice_len=16384, model_size=32):
-        path_to_model = os.path.join(self.pretrained_models_path, modela_name+".tar")
+    def load_wavegan(self, slice_len=16384, model_size=32):
+        path_to_model = os.path.join(self.pretrained_model_path)
         self.generator = WaveGANGenerator(slice_len=slice_len, model_size=model_size, use_batch_norm=False,num_channels=1)
         checkpoint = torch.load(path_to_model, map_location="cuda")
         self.generator.load_state_dict(checkpoint['generator'])
