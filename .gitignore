@@ -1,7 +1,7 @@
 .gitignore
 w2w_venv/
 .vscode
-output/
+output*
 **/__pycache__/*
 coala/
 **.tar
