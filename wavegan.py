@@ -1,4 +1,4 @@
-"""Code from """
+"""Code adapted from https://github.com/mostafaelaraby/wavegan-pytorch"""
 
 import torch
 import torch.nn as nn

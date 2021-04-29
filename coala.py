@@ -1,4 +1,4 @@
-""" Code from """
+""" Code from the original COALA implementation: https://github.com/xavierfav/coala."""
 
 import torch
 from torch import nn
