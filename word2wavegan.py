@@ -11,6 +11,7 @@ from wavegan import WaveGANGenerator
 from coala import TagEncoder, AudioEncoder
 from audio_prepro import preprocess_audio
 
+logging.basicConfig(level = logging.INFO)
 
 class Word2WaveGAN(nn.Module):
     def __init__(self, args):
@@ -52,22 +53,31 @@ class Word2WaveGAN(nn.Module):
         # audio_model.to("cuda")
         self.audio_encoder.eval()
 
+        id2tag = json.load(open('coala/id2token_top_1000.json', 'rb'))
+        self.tag2id = {tag: id for id, tag in id2tag.items()}
+
     def init_latents(self, size=1, latent_dim=100):
         noise = torch.FloatTensor(size, latent_dim)
         noise.data.normal_()
         # latents = torch.nn.Parameter(noise, requires_grad=True)
         self.latents = torch.nn.Parameter(noise)
 
-    def encode_text(self, text_prompt):
-        id2tag = json.load(open('coala/id2token_top_1000.json', 'rb'))
-        tag2id = {tag: id for id, tag in id2tag.items()}
+    def tokenize_text(self, text_prompt):
+        words_not_in_dict = [word for word in text_prompt.split(" ") if word not in self.tag2id.keys()]
+        words_in_dict = [word for word in text_prompt.split(" ") if word in self.tag2id.keys()]
+        tokenized_text = [int(self.tag2id[word]) for word in words_in_dict]
+        return tokenized_text, words_not_in_dict
 
+    def encode_text(self, text_prompt):
+        word_ids, _ = self.tokenize_text(text_prompt)
         sentence_embedding = torch.zeros(1152).to(self.device)
-        for word in text_prompt.split(" "):
-            tag_vector = torch.zeros((1, 1000)).to(self.device)
-            tag_vector[0, int(tag2id[word])] = 1
-            embedding, embedding_d = self.tag_encoder(tag_vector)
-            sentence_embedding += embedding_d.squeeze(0)
+        
+        tag_vector = torch.zeros(len(word_ids), 1000).to(self.device)
+        for index, word in enumerate(word_ids):
+            tag_vector[index, word] = 1
+
+        embedding, embedding_d = self.tag_encoder(tag_vector)
+        sentence_embedding = embedding_d.mean(dim=0)
         return sentence_embedding
     
     def encode_audio(self, audio):
@@ -97,17 +107,12 @@ class Word2WaveGAN(nn.Module):
         return generated_audio
 
     def coala_loss(self, audio, text):
-        # logit_scale = torch.nn.Parameter(torch.ones([]) * np.log(1 / 0.07))
-        # logit_scale = logit_scale.exp()
-
         text_embedding = self.encode_text(text)
         audio_embedding = self.encode_audio(audio)
 
         text_embedding = text_embedding / text_embedding.norm()
         audio_embedding = audio_embedding / audio_embedding.norm()
         
-        # cos_sim = logit_scale * audio_embedding @ text_embedding.t()
-        # cos_sim = 1/cos_sim * 100
         cos_dist =  (1 - audio_embedding @ text_embedding.t()) / 2
 
         return cos_dist
