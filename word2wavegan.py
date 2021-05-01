@@ -66,10 +66,10 @@ class Word2WaveGAN(nn.Module):
         words_not_in_dict = [word for word in text_prompt.split(" ") if word not in self.tag2id.keys()]
         words_in_dict = [word for word in text_prompt.split(" ") if word in self.tag2id.keys()]
         tokenized_text = [int(self.tag2id[word]) for word in words_in_dict]
-        return tokenized_text, words_not_in_dict
+        return tokenized_text, words_in_dict, words_not_in_dict
 
     def encode_text(self, text_prompt):
-        word_ids, _ = self.tokenize_text(text_prompt)
+        word_ids,_, _ = self.tokenize_text(text_prompt)
         sentence_embedding = torch.zeros(1152).to(self.device)
         
         tag_vector = torch.zeros(len(word_ids), 1000).to(self.device)
