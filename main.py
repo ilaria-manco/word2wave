@@ -29,6 +29,14 @@ def play_my_words(text_prompt, args):
     )
 
     i = 0
+
+    _, words_in_dict, words_not_in_dict = word2wave.tokenize_text(text_prompt)
+    if not words_in_dict:
+        raise Exception("All the words in the text prompt are out-of-vocabulary, please try with another prompt")
+    elif words_not_in_dict:
+        missing_words = ", ".join(words_not_in_dict)
+        logging.info("Out-of-vocabulary words found, ignoring: \"{}\"".format(missing_words))
+    logging.info("Making sounds to match the following text: {}".format(" ".join(words_in_dict)))
     
     while i < args.steps:
         audio, loss = word2wave(text_prompt)
