@@ -33,7 +33,7 @@ To download the files, run the following commands
 
 ```bash
 $ wget https://raw.githubusercontent.com/xavierfav/coala/master/scaler_top_1000.pkl
-$ wget https://raw.githubusercontent.com/xavierfav/coala/master/scaler_top_1000.pkl
+$ wget https://raw.githubusercontent.com/xavierfav/coala/master/json/coala/id2token_top_1000.json
 ```
 
 You'll also need to download the pre-trained weights for the COALA tag and audio encoders. Note that the COALA repo provides weights for the model trained with different configurations (e.g. different weights in the loss components). For more details on this, you can refer to the original code and paper. To download the model weights, you can run the following commands (or the equivalent for the desired model configuration)
