@@ -2,9 +2,6 @@
 
 # Use in the post as
  
-<audio controls preload="none" src="{{ site.baseurl }}/assets/crunch.wav"
- type="audio/wav"> </audio>
- 
  audio controls preload="none" src="{{ site.baseurl }}/assets/crunch.mp3"
  type="audio/mpeg"> </audio>
 
