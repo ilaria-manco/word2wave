@@ -17,6 +17,8 @@
  
 {% include embed-audio.html src="{{ site.baseurl }}/assets/crunch.wav" %}
 
+{% include embed-audio.html src="https://github.com/ilaria-manco/word2wave/blob/23e3d3d052154083ecc945e28957adceadd45ed9/docs/crunch.wav" %}
+
 You can use the [editor on GitHub](https://github.com/ilaria-manco/word2wave/edit/main/docs/index.md) to maintain and preview the content for your website in Markdown files.
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
