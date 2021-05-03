@@ -5,7 +5,7 @@
  <audio controls preload="none" src="{{ site.baseurl }}/docs/crunch.wav"
  type="audio/wav"> </audio>
  
-  <audio controls preload="none" src="{{ site.baseurl }/crunch.wav"
+  <audio controls preload="none" src="{{ site.baseurl }}/crunch.wav"
  type="audio/wav"> </audio>
 
 You can use the [editor on GitHub](https://github.com/ilaria-manco/word2wave/edit/main/docs/index.md) to maintain and preview the content for your website in Markdown files.
