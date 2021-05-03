@@ -1,7 +1,13 @@
 ## Welcome to GitHub Pages
 
-<audio controls preload="none" src="https://github.com/ilaria-manco/word2wave/blob/main/crunch.wav"
- type="audio/wav"> </audio>
+# _include/embed-audio.html
+<audio controls>
+  <source src="{{ include.src }}" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+# Use in the post as
+{% include embed-audio.html src="https://github.com/ilaria-manco/word2wave/blob/main/crunch.wav" %}
 
 You can use the [editor on GitHub](https://github.com/ilaria-manco/word2wave/edit/main/docs/index.md) to maintain and preview the content for your website in Markdown files.
 
