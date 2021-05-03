@@ -2,7 +2,7 @@
 
 # Use in the post as
  
- audio controls preload="none" src="{{ site.baseurl }}/assets/crunch.mp3"
+ <audio controls preload="none" src="{{ site.baseurl }}/assets/crunch.mp3"
  type="audio/mpeg"> </audio>
 
 You can use the [editor on GitHub](https://github.com/ilaria-manco/word2wave/edit/main/docs/index.md) to maintain and preview the content for your website in Markdown files.
