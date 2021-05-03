@@ -5,8 +5,6 @@
  <audio controls preload="none" src="{{ site.baseurl }}/docs/assets/crunch.wav"
  type="audio/wav"> </audio>
  
- {{ site.baseurl }}
- 
   <audio controls preload="none" src="{{ site.baseurl }/crunch.wav"
  type="audio/wav"> </audio>
 
