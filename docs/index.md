@@ -2,7 +2,7 @@
 
 # Use in the post as
  
- audio controls preload="none" src="{{ site.baseurl }}/docs/assets/crunch.wav"
+ audio controls preload="none" src="{{ site.baseurl }}/docs/crunch.wav"
  type="audio/wav"> </audio>
  
   <audio controls preload="none" src="{{ site.baseurl }/crunch.wav"
