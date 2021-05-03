@@ -1,11 +1,7 @@
 ## Welcome to GitHub Pages
 
-# _include/embed-audio.html
-
 # Use in the post as
  
-{% include embed-audio.html src="{{ site.baseurl }}/assets/crunch.wav" %}
-
 <audio controls preload="none" src="{{ site.baseurl }}/assets/crunch.wav"
  type="audio/wav"> </audio>
 
