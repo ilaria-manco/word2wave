@@ -6,6 +6,11 @@
   Your browser does not support the audio element.
 </audio>
 
+<audio controls="controls">
+  <source type="audio/wav" src="{{ site.baseurl }}/assets/crunch.wav"></source>
+  <p>Your browser does not support the audio element.</p>
+</audio>
+
 # Use in the post as
 <audio controls preload="none" src="{{ site.baseurl }}/assets/crunch.wav"
  type="audio/wav"> </audio>
