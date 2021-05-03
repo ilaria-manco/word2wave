@@ -7,7 +7,7 @@
 </audio>
 
 # Use in the post as
-{% include embed-audio.html src="https://github.com/ilaria-manco/word2wave/blob/main/crunch.wav" %}
+{% include embed-audio.html src="{{ site.baseurl }}/assets/crunch.wav" %}
 
 You can use the [editor on GitHub](https://github.com/ilaria-manco/word2wave/edit/main/docs/index.md) to maintain and preview the content for your website in Markdown files.
 
