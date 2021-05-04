@@ -49,13 +49,16 @@ def play_my_words(text_prompt, args):
             print(f'Step {i}', f'|| Loss: {loss.data.cpu().numpy()[0]}')
             # print(word2wave.latents)
 
-        if loss < args.threshold:    
+        if loss <= args.threshold:    
             break
         
         i += 1
     
     audio_to_save = np.array(audio.detach().cpu().numpy())
     librosa.output.write_wav(os.path.join(args.output_dir, text_prompt + ".wav"), audio_to_save, args.sample_rate)
+
+    if loss > args.threshold:
+        logging.info("The optimisation failed to generate audio that is sufficiently similar to the given prompt. You may wish to try again.")
 
 
 if __name__ == "__main__":
@@ -64,7 +67,7 @@ if __name__ == "__main__":
     parser.add_argument("--lr", type=float, default=0.04, help="learning rate")
     parser.add_argument("--steps", type=int, default=10000, help="number of optimization steps")
     parser.add_argument("--coala_model_name", type=str, default="dual_e_c", help="coala model name (can be one of [dual_e_c, dual_ae_c]")
-    parser.add_argument("--pretrained_model_path", type=str, default="wavegan/gan_fs_loop_new_2.tar", help="path to store wavegan and coala pretrained models")
+    parser.add_argument("--wavegan_path", type=str, default="wavegan/gan_fs_loop_32.tar", help="path to the pretrained wavegan model")
     parser.add_argument("--threshold", type=float, default=0.15, help="threshold below which optimisation stops")
     parser.add_argument("--batch", type=bool, default=False, help="whether to run batch of experiments with all tags")
     parser.add_argument("--output_dir", type=str, default="output_new", help="path to store results")
@@ -73,7 +76,7 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
-    os.environ["CUDA_VISIBLE_DEVICES"] = "1"
+    os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 
     if not os.path.exists(args.output_dir):
         os.mkdir(args.output_dir)
