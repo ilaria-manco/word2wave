@@ -3,6 +3,7 @@ w2w_venv/
 .vscode
 output*
 **/__pycache__/*
-coala/
+coala/models/
 **.tar
 /wavegan/
+*.png
