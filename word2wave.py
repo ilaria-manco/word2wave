@@ -13,9 +13,9 @@ from audio_prepro import preprocess_audio
 
 logging.basicConfig(level = logging.INFO)
 
-class Word2WaveGAN(nn.Module):
+class Word2Wave(nn.Module):
     def __init__(self, args):
-        super(Word2WaveGAN, self).__init__()
+        super(Word2Wave, self).__init__()
         self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
         self.coala_model_name = args.coala_model_name
         self.wavegan_path = args.wavegan_path

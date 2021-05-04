@@ -7,14 +7,14 @@ import logging
 import numpy as np
 import torchaudio
 
-from word2wavegan import Word2WaveGAN
+from word2wave import Word2Wave
 
 logging.basicConfig(level = logging.INFO)
 import warnings
 warnings.filterwarnings('ignore')
 
 def play_my_words(text_prompt, args):
-    word2wave = Word2WaveGAN(args)
+    word2wave = Word2Wave(args)
     word2wave.cuda()
 
     for name, param in word2wave.named_parameters():
