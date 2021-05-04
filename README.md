@@ -19,13 +19,13 @@ pip install -r requirements.txt
 ```
 
 ### WaveGAN generator
-Word2Wave requires a pre-trained WaveGAN generator. In my experiments, I trained my own on the [Freesound Loop Dataset](https://zenodo.org/record/3967852#.YIlF931KhhE), using [this implementation](https://github.com/mostafaelaraby/wavegan-pytorch). To download the FSL dataset:
+Word2Wave requires a pre-trained WaveGAN generator. In my experiments, I trained my own on the [Freesound Loop Dataset](https://zenodo.org/record/3967852#.YIlF931KhhE), using [this implementation](https://github.com/mostafaelaraby/wavegan-pytorch). To download the FSL dataset do:
 
 ```bash
 $ wget https://zenodo.org/record/3967852/files/FSL10K.zip?download=1
 ```
 
-and train following the instructions in the WaveGAN repo. Once trained, place it in the `wavegan` folder:
+and then train following the instructions in the WaveGAN repo. Once trained, place the model in the `wavegan` folder:
 
 ```
 📂wavegan
@@ -40,12 +40,13 @@ $ wget https://raw.githubusercontent.com/xavierfav/coala/master/saved_models/dua
 $ wget https://raw.githubusercontent.com/xavierfav/coala/master/saved_models/dual_ae_c/tag_encoder_epoch_200.pt
 ```
 
-Once downloaded them, place them in the `coala/models` folder:
+Once downloaded, place them in the `coala/models` folder:
 ```
 📂coala
  ┣ 📂models
-    ┣ 📜audio_encoder_epoch_200.pt
-    ┗ 📜tag_encoder_epoch_200.pt
+   ┣ 📂dual_ae_c
+     ┣ 📜audio_encoder_epoch_200.pt
+     ┗ 📜tag_encoder_epoch_200.pt
 ```
 
 ## How to use
