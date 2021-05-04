@@ -45,12 +45,10 @@ class Word2WaveGAN(nn.Module):
 
         self.tag_encoder = TagEncoder()
         self.tag_encoder.load_state_dict(torch.load(tag_encoder_path))
-        # tag_model.to("cuda")
         self.tag_encoder.eval()
 
         self.audio_encoder = AudioEncoder()
         self.audio_encoder.load_state_dict(torch.load(audio_encoder_path))
-        # audio_model.to("cuda")
         self.audio_encoder.eval()
 
         id2tag = json.load(open('coala/id2token_top_1000.json', 'rb'))
@@ -59,7 +57,6 @@ class Word2WaveGAN(nn.Module):
     def init_latents(self, size=1, latent_dim=100):
         noise = torch.FloatTensor(size, latent_dim)
         noise.data.normal_()
-        # latents = torch.nn.Parameter(noise, requires_grad=True)
         self.latents = torch.nn.Parameter(noise)
 
     def tokenize_text(self, text_prompt):
