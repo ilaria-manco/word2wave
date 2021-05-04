@@ -1,8 +1,8 @@
 # Sound Examples
  
-### Cherry-picked samples produced from one-word text prompts 
+### Cherry-picked samples from one-word text prompts 
 - "Rain"
-- 
+
   <audio controls preload="none" src="{{ site.baseurl }}/assets/rain.wav"
  type="audio/wav"> </audio>
  
@@ -56,7 +56,7 @@
 
 <br />
 
-### Cherry-picked samples produced from longer text prompts 
+### Cherry-picked samples from longer text prompts 
 - "Alien playing a metallic flute"
  
    <audio controls preload="none" src="{{ site.baseurl }}/assets/alien metallic flute.wav"
@@ -75,7 +75,6 @@
  type="audio/wav"> </audio>
  
  
- 
 - "Evil robot laughing"
  
    <audio controls preload="none" src="{{ site.baseurl }}/assets/robot evil laughing.wav"
@@ -88,4 +87,4 @@
  type="audio/wav"> </audio>
 
 <br />
-### Examples of failed generation
+### Examples of failed generation and/or other cool outputs
