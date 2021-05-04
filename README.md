@@ -2,7 +2,7 @@
 
 Word2Wave is a simple method for text-controlled GAN audio generation. You can either follow the setup instructions below and use the source code and CLI provided in this repo or you can have a play around in the Colab notebook provided. Note that, in both cases, you will need to train a WaveGAN model first.
 
-Colab playground [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/)
+Colab playground [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1c9DdSN_oiv0rcL9SH-W8-jfhcQf6iVYy?usp=sharing)
 
 ## Setup
 
@@ -19,7 +19,7 @@ pip install -r requirements.txt
 ```
 
 ### WaveGAN generator
-Word2Wave requires a pre-trained WaveGAN generator. In our experiments, we trained our own on the [Freesound Loop Dataset](https://zenodo.org/record/3967852#.YIlF931KhhE), using [this implementation](https://github.com/mostafaelaraby/wavegan-pytorch). We provide pre-trained weights of our generator upon request. Alternatively, you can download the FSL dataset 
+Word2Wave requires a pre-trained WaveGAN generator. In my experiments, I trained my own on the [Freesound Loop Dataset](https://zenodo.org/record/3967852#.YIlF931KhhE), using [this implementation](https://github.com/mostafaelaraby/wavegan-pytorch). To download the FSL dataset:
 
 ```bash
 $ wget https://zenodo.org/record/3967852/files/FSL10K.zip?download=1
