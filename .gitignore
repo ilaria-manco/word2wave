@@ -1,5 +1,5 @@
 .gitignore
-w2w_venv/
+**venv/
 .vscode
 output*
 **/__pycache__/*
