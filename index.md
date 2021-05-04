@@ -118,7 +118,8 @@ Here are some cherry-picked outputs from [Word2Wave](https://github.com/ilaria-m
    <audio controls preload="none" src="{{ site.baseurl }}/assets/voice.wav"
  type="audio/wav"> </audio>
  
-  - "Shout"
+ 
+ - "Shout"
  
    <audio controls preload="none" src="{{ site.baseurl }}/assets/shout.wav"
  type="audio/wav"> </audio>
