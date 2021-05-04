@@ -1,6 +1,4 @@
-# Word2Wave
-
-## Sound Examples
+# Sound Examples
  
 ### Cherry-picked samples produced with one-word text prompts 
 - "Rain"
