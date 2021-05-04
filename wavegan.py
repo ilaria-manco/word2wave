@@ -5,7 +5,6 @@ import torch.nn as nn
 from torch.nn import Parameter
 import torch.nn.functional as F
 import torch.utils.data
-# from params import *
 
 
 class Transpose1dLayer(nn.Module):
@@ -40,7 +39,6 @@ class Transpose1dLayer(nn.Module):
 
     def forward(self, x):
         if self.upsample:
-            # recommended by wavgan paper to use nearest upsampling
             x = nn.functional.interpolate(x, scale_factor=self.upsample, mode="nearest")
         return self.transpose_ops(x)
 
@@ -89,7 +87,6 @@ class PhaseShuffle(nn.Module):
     necessary.
     """
 
-    # Copied from https://github.com/jtcramer/wavegan/blob/master/wavegan.py#L8
     def __init__(self, shift_factor):
         super(PhaseShuffle, self).__init__()
         self.shift_factor = shift_factor

@@ -42,7 +42,6 @@ def plot_spectrogram(spec, title=None, ylabel='freq_bin', aspect='auto', xmax=No
     plt.savefig("spec.png")
 
 def pad(tensor, sampe_rate):
-    # 0-Pad 10 sec at fs hz and add little noise
     z = torch.zeros(10*sample_rate, dtype=torch.float32)
     z[:tensor.size(0)] = tensor
     z = z + 5*1e-4*torch.rand(z.size(0))
