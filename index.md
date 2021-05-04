@@ -1,6 +1,6 @@
 # Sound Examples
- 
-### Cherry-picked samples from one-word text prompts 
+Here are some cherry-picked outputs from [Word2Wave](https://github.com/ilaria-manco/word2wave).
+### Samples from one-word text prompts 
 - "Rain"
 
   <audio controls preload="none" src="{{ site.baseurl }}/assets/rain.wav"
@@ -49,14 +49,14 @@
  type="audio/wav"> </audio>
  
  
- - "Voice"
+ - "Aluminium"
  
-   <audio controls preload="none" src="{{ site.baseurl }}/assets/voice.wav"
+   <audio controls preload="none" src="{{ site.baseurl }}/assets/aluminium.wav"
  type="audio/wav"> </audio>
 
 <br />
 
-### Cherry-picked samples from longer text prompts 
+### Samples from longer text prompts 
 - "Alien playing a metallic flute"
  
    <audio controls preload="none" src="{{ site.baseurl }}/assets/alien metallic flute.wav"
@@ -87,4 +87,45 @@
  type="audio/wav"> </audio>
 
 <br />
-### Examples of failed generation and/or other cool outputs
+
+### Examples of failed semantic generation and/or other cool outputs
+- "Yamaha"
+ 
+   <audio controls preload="none" src="{{ site.baseurl }}/assets/yamaha.wav"
+ type="audio/wav"> </audio>
+ 
+ 
+- "Weapon"
+ 
+   <audio controls preload="none" src="{{ site.baseurl }}/assets/weapon.wav"
+ type="audio/wav"> </audio>
+ 
+ 
+ - "Stab"
+ 
+   <audio controls preload="none" src="{{ site.baseurl }}/assets/stab.wav"
+ type="audio/wav"> </audio>
+ 
+ 
+ - "Flatulence"
+ 
+   <audio controls preload="none" src="{{ site.baseurl }}/assets/flatulence.wav"
+ type="audio/wav"> </audio>
+ 
+ 
+  - "Voice"
+ 
+   <audio controls preload="none" src="{{ site.baseurl }}/assets/voice.wav"
+ type="audio/wav"> </audio>
+ 
+ 
+ - "Shout"
+ 
+   <audio controls preload="none" src="{{ site.baseurl }}/assets/shout.wav"
+ type="audio/wav"> </audio>
+ 
+ 
+ - "Shuffle"
+ 
+   <audio controls preload="none" src="{{ site.baseurl }}/assets/shuffle.wav"
+ type="audio/wav"> </audio>
