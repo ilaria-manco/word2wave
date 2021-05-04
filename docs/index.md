@@ -21,3 +21,6 @@
  - "Psytrance"
    <audio controls preload="none" src="{{ site.baseurl }}/assets/psytrance.wav"
  type="audio/wav"> </audio>
+ - "Videogame"
+   <audio controls preload="none" src="{{ site.baseurl }}/assets/videogame.wav"
+ type="audio/wav"> </audio>
