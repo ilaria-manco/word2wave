@@ -1,6 +1,6 @@
 # Sound Examples
  
-### Cherry-picked samples produced with one-word text prompts 
+### Cherry-picked samples produced from one-word text prompts 
 - "Rain"
 
   <audio controls preload="none" src="{{ site.baseurl }}/assets/rain.wav"
@@ -41,3 +41,49 @@
  
    <audio controls preload="none" src="{{ site.baseurl }}/assets/videogame.wav"
  type="audio/wav"> </audio>
+ 
+ 
+  - "Siren"
+ 
+   <audio controls preload="none" src="{{ site.baseurl }}/assets/siren.wav"
+ type="audio/wav"> </audio>
+ 
+ 
+   - "Voice"
+ 
+   <audio controls preload="none" src="{{ site.baseurl }}/assets/voice.wav"
+ type="audio/wav"> </audio>
+
+
+### Cherry-picked samples produced from longer text prompts 
+- "Alien playing a metallic flute"
+ 
+   <audio controls preload="none" src="{{ site.baseurl }}/assets/alien metallic flute.wav"
+ type="audio/wav"> </audio>
+ 
+ 
+- "Crazy cool ambient siren"
+ 
+   <audio controls preload="none" src="{{ site.baseurl }}/assets/crazy cool ambient siren.wav"
+ type="audio/wav"> </audio>
+ 
+ 
+- "Splash of water"
+ 
+   <audio controls preload="none" src="{{ site.baseurl }}/assets/splash_water.wav"
+ type="audio/wav"> </audio>
+ 
+ 
+ 
+- "Evil robot laughing"
+ 
+   <audio controls preload="none" src="{{ site.baseurl }}/assets/robot evil laughing.wav"
+ type="audio/wav"> </audio>
+ 
+ 
+- "Phone notification"
+ 
+   <audio controls preload="none" src="{{ site.baseurl }}/assets/phone_notification.wav"
+ type="audio/wav"> </audio>
+
+### Examples of failed generation
