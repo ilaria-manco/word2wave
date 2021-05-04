@@ -1,12 +1,14 @@
+import librosa
 import torch
 import torchaudio
 from torchaudio import transforms as T
+from matplotlib import pyplot as plt
 
 n_fft = 1024
 win_length = None
 hop_length = 512
 n_mels = 96
-sample_rate = 22000
+sample_rate = 16000
 
 mel_spectrogram = T.MelSpectrogram(
     sample_rate=sample_rate,
@@ -19,6 +21,7 @@ mel_spectrogram = T.MelSpectrogram(
     norm='slaney',
     onesided=True,
     n_mels=n_mels,
+    window_fn=torch.hamming_window
 )
 
 def resample(source_sr, target_sr):
@@ -36,6 +39,8 @@ def plot_spectrogram(spec, title=None, ylabel='freq_bin', aspect='auto', xmax=No
     fig.colorbar(im, ax=axs)
     plt.show(block=False)
 
+    plt.savefig("spec.png")
+
 def pad(tensor, sampe_rate):
     # 0-Pad 10 sec at fs hz and add little noise
     z = torch.zeros(10*sample_rate, dtype=torch.float32)
@@ -51,8 +56,7 @@ def preprocess_audio(audio="/content/test_file.wav", transform=mel_spectrogram):
         audio = torch.mean(audio, dim=0)
     else:
         pass
-    # take only 1 s (just for testing)
-    audio = audio[:22000]
+    # audio = audio[:sample_rate]
     audio = pad(audio, sample_rate)
     if transform is not None:
         audio = transform(audio)[:96, :96]
