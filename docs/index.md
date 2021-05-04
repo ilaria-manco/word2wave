@@ -2,7 +2,8 @@
  
 ### Cherry-picked samples produced from one-word text prompts 
 - "Rain"
-  <audio controls style="width: 200px;" preload="none" src="{{ site.baseurl }}/assets/rain.wav"
+- 
+  <audio controls preload="none" src="{{ site.baseurl }}/assets/rain.wav"
  type="audio/wav"> </audio>
  
  
@@ -42,17 +43,18 @@
  type="audio/wav"> </audio>
  
  
-  - "Siren"
+ - "Siren"
  
    <audio controls preload="none" src="{{ site.baseurl }}/assets/siren.wav"
  type="audio/wav"> </audio>
  
  
-   - "Voice"
+ - "Voice"
  
    <audio controls preload="none" src="{{ site.baseurl }}/assets/voice.wav"
  type="audio/wav"> </audio>
 
+<br />
 
 ### Cherry-picked samples produced from longer text prompts 
 - "Alien playing a metallic flute"
@@ -85,4 +87,5 @@
    <audio controls preload="none" src="{{ site.baseurl }}/assets/phone_notification.wav"
  type="audio/wav"> </audio>
 
+<br />
 ### Examples of failed generation
