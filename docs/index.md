@@ -2,8 +2,7 @@
  
 ### Cherry-picked samples produced from one-word text prompts 
 - "Rain"
-
-  <audio controls preload="none" src="{{ site.baseurl }}/assets/rain.wav"
+  <audio controls style="width: 200px;" preload="none" src="{{ site.baseurl }}/assets/rain.wav"
  type="audio/wav"> </audio>
  
  
