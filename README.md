@@ -1,6 +1,7 @@
 # Word2Wave
 
-Word2Wave is a simple method for text-controlled GAN audio generation. You can either follow the setup instructions below and use the source code and CLI provided in this repo or you can have a play around in the Colab notebook provided. Note that, in both cases, you will need to train a WaveGAN model first.
+Word2Wave is a simple method for text-controlled GAN audio generation. You can either follow the setup instructions below and use the source code and CLI provided in this repo or you can have a play around in the Colab notebook provided. Note that, in both cases, you will need to train a WaveGAN model first. You can also hear some examples [here](https://ilariamanco.com/word2wave/).
+
 
 Colab playground [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1c9DdSN_oiv0rcL9SH-W8-jfhcQf6iVYy?usp=sharing)
 
